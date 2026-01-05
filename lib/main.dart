@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:taxiflutter/screens/login_screens.dart';
-
 import 'components/buttons/medium_Button.dart';
 import 'components/feedback/location_Access.dart';
 import 'components/feedback/total_Fare.dart';
