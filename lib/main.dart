@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:taxiflutter/components/feedback/description.dart';
+import 'package:taxiflutter/components/feedback/error_Message.dart';
 import 'components/buttons/medium_Button.dart';
 
 void main() {
@@ -9,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,14 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MediumButton(
-        color: Colors.blue,
-        textColor: Colors.white,
-        strokeColor: Colors.black,
-        strokeWidth: 2,
-        text: 'Medium Button',
-        onPressed: () {},
-      ),
+      home: ErrorMessage(text: 'Error', icon: Icons.error_outline, backgroundColor: Colors.red.withOpacity(0.1), contentColor: Colors.red)
     );
   }
 }
