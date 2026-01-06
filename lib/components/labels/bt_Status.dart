@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BtConnected extends StatelessWidget {
+class BtStatus extends StatelessWidget {
   final String label;
   final Color statusColor;
   final TextStyle? textStyle;
   final double dotSize;
   final double spacing;
 
-  const BtConnected({
+  const BtStatus({
     super.key,
     required this.label,
     this.statusColor = const Color(0xFF008955),

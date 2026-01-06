@@ -121,7 +121,11 @@ class _LoginScreensState extends State<LoginScreens> {
               const SizedBox(height: 8),
               InputTextField(
                 hint: 'Type in your email..',
+                keyboardType: TextInputType.emailAddress,
                 controller: emailController,
+                enableBorderColor: Colors.blue,
+                fillColor: Colors.white,
+                focusedBorderColor: Colors.white,
               ),
 
               const SizedBox(height:20),
@@ -137,7 +141,11 @@ class _LoginScreensState extends State<LoginScreens> {
               const SizedBox(height: 8),
               InputTextField(
                 hint: 'Type in your password..',
+                keyboardType: TextInputType.visiblePassword,
                 controller: emailController,
+                enableBorderColor: Colors.blue,
+                fillColor: Colors.white,
+                focusedBorderColor: Colors.white,
               ),
               const SizedBox(height: 20),
               MediumButton(text: 'Login',
