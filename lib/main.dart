@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:taxiflutter/components/overlays/add_Number.dart';
 import 'package:taxiflutter/components/overlays/current_trip.dart';
 import 'package:taxiflutter/components/overlays/pay_Amount.dart';
+import 'package:taxiflutter/components/overlays/scan_and_Pay.dart';
 import 'package:taxiflutter/screens/login_screens.dart';
 import 'components/buttons/medium_Button.dart';
 import 'components/feedback/location_Access.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: PayAmount()
+      home: ScanAndPay()
     );
   }
 }
