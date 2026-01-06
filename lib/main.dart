@@ -4,6 +4,7 @@ import 'package:taxiflutter/components/overlays/current_trip.dart';
 import 'package:taxiflutter/components/overlays/pay_Amount.dart';
 import 'package:taxiflutter/components/overlays/scan_and_Pay.dart';
 import 'package:taxiflutter/screens/login_screens.dart';
+import 'components/Payment_Components/current_Fare.dart';
 import 'components/buttons/medium_Button.dart';
 import 'components/feedback/location_Access.dart';
 import 'components/feedback/total_Fare.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ScanAndPay()
+      home: CurrentFare()
     );
   }
 }

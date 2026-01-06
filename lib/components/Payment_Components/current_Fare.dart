@@ -1,10 +1,87 @@
 import 'package:flutter/material.dart';
+import 'package:taxiflutter/components/labels/qr_Payment.dart';
+
+import '../buttons/normal_Button.dart';
+import '../text_fields/input_Text_field.dart';
 
 class CurrentFare extends StatelessWidget {
-  const CurrentFare({super.key});
+  final VoidCallback? onClose;
+
+  const CurrentFare({super.key, this.onClose});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Material(
+      color: Colors.black.withOpacity(0.5), // Semi-transparent background
+      child: Center(
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 24),
+          // Prevents touching screen edges
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: const Color(0xFF21375A), // Dark blue background
+            borderRadius: BorderRadius.circular(12),
+          ),
+
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Fit content vertically
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Top Row with Badge and Close Button
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                // Aligns child to the end (right)
+                children: [
+                  GestureDetector(
+                    onTap: onClose ?? () => Navigator.of(context).pop(),
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF142136),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 24),
+
+              Center(
+                child: Text(
+                  'Scan and Pay',
+                  style: TextStyle(color: Colors.white, fontSize: 26),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: Image.asset('assets/images/qrcode.png')),
+
+              const SizedBox(height: 24),
+
+              Center(
+                child: QrPayment(
+                  label: 'QR Payment',
+                  icon: Icons.qr_code,
+                  onPressed: () {},
+                ),
+              ),
+
+              const SizedBox(height: 24),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
