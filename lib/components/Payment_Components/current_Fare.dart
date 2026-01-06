@@ -5,14 +5,12 @@ import '../buttons/normal_Button.dart';
 import '../text_fields/input_Text_field.dart';
 
 class CurrentFare extends StatelessWidget {
-  final VoidCallback? onClose;
   final String currentFareAmount;
   final VoidCallback? onCurrentFarePressed;
   final VoidCallback? onEditFarePressed;
 
   const CurrentFare({
     super.key,
-    this.onClose,
     required this.currentFareAmount,
     this.onCurrentFarePressed,
     this.onEditFarePressed,

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:taxiflutter/components/Payment_Components/hire.dart';
+import 'package:taxiflutter/components/Payment_Components/payments.dart';
 import 'package:taxiflutter/components/overlays/add_Number.dart';
 import 'package:taxiflutter/components/overlays/current_trip.dart';
 import 'package:taxiflutter/components/overlays/pay_Amount.dart';
 import 'package:taxiflutter/components/overlays/scan_and_Pay.dart';
+import 'package:taxiflutter/components/selection_Buttons/bluetooth.dart';
 import 'package:taxiflutter/screens/login_screens.dart';
 import 'components/Payment_Components/current_Fare.dart';
 import 'components/buttons/medium_Button.dart';
@@ -25,7 +28,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: CurrentFare(currentFareAmount: '200')
+      home: BluetoothStatusCard(state: BluetoothState.disconnected)
+
     );
   }
 }
