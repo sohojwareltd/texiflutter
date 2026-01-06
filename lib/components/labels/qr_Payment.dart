@@ -13,7 +13,7 @@ class QrPayment extends StatelessWidget {
     required this.label,
     required this.icon,
     required this.onPressed,
-    this.backgroundColor = const Color(0xFF1E2F4D),
+    this.backgroundColor = const Color(0xFF21375A),
     this.foregroundColor = Colors.white,
     this.borderRadius = 12.0,
   });
