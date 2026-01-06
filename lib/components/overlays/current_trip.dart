@@ -32,11 +32,7 @@ class CurrentTrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // The unused 'phoneController' has been removed.
 
-    // Wrap the widget with Material to provide a canvas for Material Design
-    // widgets like TextField and prevent the 'No Material widget found' error.
-    // Setting the color to transparent makes the underlying screen visible.
     return Material(
       color: Colors.black.withOpacity(0.5), // Semi-transparent background
       child: Center(
@@ -53,16 +49,21 @@ class CurrentTrip extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Top Row with Badge and Close Button
-              GestureDetector(
-                onTap: onClose ?? () => Navigator.of(context).pop(),
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF142136),
-                    shape: BoxShape.circle,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end, // Aligns child to the end (right)
+                children: [
+                  GestureDetector(
+                    onTap: onClose ?? () => Navigator.of(context).pop(),
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF142136),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.close, color: Colors.white, size: 20),
+                    ),
                   ),
-                  child: const Icon(Icons.close, color: Colors.white, size: 20),
-                ),
+                ],
               ),
 
               const SizedBox(height: 30),

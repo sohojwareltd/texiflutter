@@ -28,15 +28,15 @@ class InputTextField extends StatelessWidget {
         filled: true,
         fillColor: fillColor,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(color: enableBorderColor),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(color: focusedBorderColor),
         ),
       ),
