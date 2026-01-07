@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taxiflutter/color_Theme/color_theme.dart';
 import 'package:taxiflutter/components/buttons/medium_Button.dart';
 import 'package:taxiflutter/components/text_fields/input_Text_field.dart';
 
@@ -42,6 +43,7 @@ class _LoginScreensState extends State<LoginScreens> {
                     Text(
                       'Registration is mandatory to access the \n\napp and process fares.',
                       style: TextStyle(
+                        fontFamily: 'inter',
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                         color: Color(0xffF5F7FA),
@@ -68,6 +70,7 @@ class _LoginScreensState extends State<LoginScreens> {
                           Text(
                             'Go to form',
                             style: TextStyle(
+                              fontFamily: 'inter',
                               fontSize: 16,
                               color: Color(0xffF5F7FA),
                               fontWeight: FontWeight.w500,
@@ -143,15 +146,15 @@ class _LoginScreensState extends State<LoginScreens> {
                 hint: 'Type in your password..',
                 keyboardType: TextInputType.visiblePassword,
                 controller: emailController,
-                enableBorderColor: Colors.blue,
-                fillColor: Colors.white,
-                focusedBorderColor: Colors.white,
+                enableBorderColor: ColorTheme.coreBlue,
+                fillColor: ColorTheme.platinum,
+                focusedBorderColor: ColorTheme.platinum,
               ),
               const SizedBox(height: 20),
               MediumButton(text: 'Login',
-                  textColor: Color(0xFFFFFFFF),
-                  color: Color(0XFF086CBF),
-                  strokeColor: Color(0XFF086CBF),
+                  textColor: ColorTheme.platinum,
+                  color: ColorTheme.coreBlue,
+                  strokeColor: ColorTheme.coreBlue,
                   strokeWidth: 0.0),
 
 

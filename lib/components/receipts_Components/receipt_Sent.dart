@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taxiflutter/color_Theme/color_theme.dart';
 
 import '../buttons/medium_Button.dart';
 
@@ -83,8 +84,8 @@ class ReceiptSent extends StatelessWidget {
             MediumButton(
               text:'Done',
               textColor: Color(0XFFFFFFFF),
-              color: const Color(0xFF086CBF),
-              strokeColor: const Color(0xFF086CBF),
+              color:ColorTheme.coreBlue,
+              strokeColor: ColorTheme.coreBlue,
               strokeWidth: 0.0,
               onPressed: () {
 
