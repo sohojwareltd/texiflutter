@@ -31,7 +31,7 @@ class Payments extends StatelessWidget {
     this.strokeColor,
     this.strokeWidth = 1.5,
     this.borderRadius = 10.0,
-    this.padding = const EdgeInsets.all(20.0),
+    this.padding = const EdgeInsets.symmetric(vertical: 22,horizontal: 40),
     this.onTap,
   });
 
@@ -66,7 +66,7 @@ class Payments extends StatelessWidget {
                     title,
                     style: TextStyle(
                       color: contentColor,
-                      fontSize: subtitle != null ? 18 : 20 ,
+                      fontSize: subtitle != null ? 14 : 18 ,
                       fontWeight: subtitle != null ? FontWeight.bold : FontWeight.w400,
                       letterSpacing: subtitle != null ? 1.1 : null,
                     ),

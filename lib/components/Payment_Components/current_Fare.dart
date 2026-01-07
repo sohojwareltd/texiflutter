@@ -22,13 +22,12 @@ class CurrentFare extends StatelessWidget {
         currentFareAmount.isEmpty || double.tryParse(currentFareAmount) == 0;
 
     return Material(
-      color: Colors.black.withOpacity(0.5),
+      color: Colors.transparent,
       child: Center(
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20),
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: const Color(0xFF21375A),
+            color: Colors.transparent,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: const Color(0xFF0F253D)),
           ),

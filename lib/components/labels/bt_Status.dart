@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
 class BtStatus extends StatelessWidget {
+  final bool isActive;
   final String label;
   final Color statusColor;
+  final Color activeColor;
   final TextStyle? textStyle;
   final double dotSize;
   final double spacing;
 
   const BtStatus({
+    // Initial value is handled by the parent widget passing 'false'
+    required this.isActive,
     super.key,
-    required this.label,
-    this.statusColor = const Color(0xFF008955),
+    this.label = 'Taximeter', // Base label name
+    this.statusColor = Colors.grey,
+    this.activeColor = const Color(0xFF008955),
     this.textStyle,
     this.dotSize = 12.0,
     this.spacing = 10.0,
@@ -25,16 +30,17 @@ class BtStatus extends StatelessWidget {
           width: dotSize,
           height: dotSize,
           decoration: BoxDecoration(
-            color: statusColor,
+            color: isActive ? activeColor : statusColor,
             shape: BoxShape.circle,
           ),
         ),
         SizedBox(width: spacing),
         Text(
-          label,
+          // FIX: Removed 'label:' prefix. Position 1 must be the String.
+          isActive ? '$label On' : '$label Off',
           style: textStyle ??
               const TextStyle(
-                color: Colors.white70,
+                color: Colors.white,
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
               ),

@@ -4,7 +4,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final String menuText;
   final VoidCallback? onMenuTap;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final Color textColor;
 
   const CustomHeader({
@@ -12,7 +12,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
     required this.title,
     this.menuText = 'menu',
     this.onMenuTap,
-    this.backgroundColor = const Color(0xFF263E5F), // The navy blue from your image
+    this.backgroundColor = Colors.transparent, // The navy blue from your image
     this.textColor = Colors.white,
   });
 
