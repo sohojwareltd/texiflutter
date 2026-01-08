@@ -12,7 +12,7 @@ class Push2pay extends StatelessWidget {
   const Push2pay({
     super.key,
     this.label = 'Push2Pay',
-    this.icon = Icons.chat_bubble, // Closest material icon to your design
+    this.icon = Icons.chat_rounded, // Closest material icon to your design
     required this.onTap,
     this.backgroundColor = const Color(0xFF1E3A5F), // Dark blue background
     this.borderColor = const Color(0xFF3E5A80),     // Lighter blue border
@@ -26,7 +26,7 @@ class Push2pay extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(borderRadius),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
@@ -38,14 +38,14 @@ class Push2pay extends StatelessWidget {
             Icon(
               icon,
               color: contentColor,
-              size: 28,
+              size: 18,
             ),
-            const SizedBox(width: 16),
+            const SizedBox(width: 8),
             Text(
               label,
               style: TextStyle(
                 color: contentColor,
-                fontSize: 24,
+                fontSize: 18,
                 fontWeight: FontWeight.w500,
                 letterSpacing: 0.5,
               ),

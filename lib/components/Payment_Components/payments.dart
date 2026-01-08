@@ -17,7 +17,8 @@ class Payments extends StatelessWidget {
   // Shape
   final double borderRadius;
   final EdgeInsets padding;
-  final VoidCallback? onTap;
+  // 1. Changed onTap to onPressed for convention
+  final VoidCallback? onPressed;
 
   const Payments({
     super.key,
@@ -31,14 +32,16 @@ class Payments extends StatelessWidget {
     this.strokeColor,
     this.strokeWidth = 1.5,
     this.borderRadius = 10.0,
-    this.padding = const EdgeInsets.symmetric(vertical: 22,horizontal: 40),
-    this.onTap,
+    this.padding = const EdgeInsets.symmetric(vertical: 22, horizontal: 40),
+    // 2. Updated the constructor parameter
+    this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      // 3. Assigned onPressed to the onTap property of GestureDetector
+      onTap: onPressed,
       child: Container(
         padding: padding,
         decoration: BoxDecoration(
@@ -66,8 +69,9 @@ class Payments extends StatelessWidget {
                     title,
                     style: TextStyle(
                       color: contentColor,
-                      fontSize: subtitle != null ? 14 : 18 ,
-                      fontWeight: subtitle != null ? FontWeight.bold : FontWeight.w400,
+                      fontSize: subtitle != null ? 14 : 18,
+                      fontWeight:
+                      subtitle != null ? FontWeight.bold : FontWeight.w400,
                       letterSpacing: subtitle != null ? 1.1 : null,
                     ),
                   ),
