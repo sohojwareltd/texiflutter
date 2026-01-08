@@ -6,6 +6,7 @@ class TotalFare extends StatelessWidget {
 
   final Color backgroundColor;
   final Color contentColor;
+  final Color contentColorTitle;
   final List<Color> strokeGradient;
   final double borderRadius;
   final double borderWidth;
@@ -22,15 +23,16 @@ class TotalFare extends StatelessWidget {
     required this.title,
     required this.backgroundColor,
     required this.contentColor,
+    required this.contentColorTitle,
     required this.strokeGradient,
     this.trailingText,
     this.leading,
     this.trailing,
     this.borderRadius = 20,
-    this.borderWidth = 2,
+    this.borderWidth = 1,
     this.titleFontSize = 16,
     this.titleFontWeight = FontWeight.w400,
-    this.padding = const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+    this.padding = const EdgeInsets.symmetric(horizontal: 24, vertical: 27),
     this.onTap,
   });
 
@@ -61,7 +63,7 @@ class TotalFare extends StatelessWidget {
                 child: Text(
                   title,
                   style: TextStyle(
-                    color: contentColor,
+                    color: contentColorTitle,
                     fontSize: titleFontSize,
                     fontWeight: titleFontWeight,
                   ),
@@ -69,7 +71,7 @@ class TotalFare extends StatelessWidget {
               ),
               if (trailingText != null)
                 Text(
-                  trailingText!,
+                  '\$${trailingText!}',
                   style: TextStyle(
                     color: contentColor,
                     fontSize: 32,

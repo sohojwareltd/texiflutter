@@ -28,8 +28,8 @@ class PayAmountTipComp extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // 2 items per row
-        crossAxisSpacing: 12, // Horizontal space
-        mainAxisSpacing: 12, // Vertical space
+        crossAxisSpacing: 10, // Horizontal space
+        mainAxisSpacing: 10, // Vertical space
         childAspectRatio: 2.2, // Width to Height ratio (Rectangle shape)
       ),
       itemCount: options.length,
@@ -39,11 +39,12 @@ class PayAmountTipComp extends StatelessWidget {
         return GestureDetector(
           onTap: () => onSelected(index),
           child: AnimatedContainer(
+            padding: EdgeInsets.symmetric(vertical: 37.5,horizontal: 33),
             duration: const Duration(milliseconds: 200),
             curve: Curves.easeInOut,
             decoration: BoxDecoration(
               color: isSelected ? selectedColor : unselectedColor,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(10),
               border: isSelected
                   ? Border.all(color: selectedStrokeColor, width: 2)
                   : Border.all(color: Colors.transparent, width: 2),

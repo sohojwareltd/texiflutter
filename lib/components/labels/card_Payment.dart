@@ -15,7 +15,7 @@ class CardPayment extends StatelessWidget {
     required this.onPressed,
     this.backgroundColor = const Color(0xFF1E2F4D),
     this.foregroundColor = Colors.white,
-    this.borderRadius = 12.0,
+    this.borderRadius = 10,
   });
 
   @override
@@ -23,16 +23,17 @@ class CardPayment extends StatelessWidget {
     return SizedBox(
       child: ElevatedButton.icon(
         onPressed: onPressed,
-        icon: Icon(icon, size: 28, color: foregroundColor),
+        icon: Icon(icon, size: 14, color: foregroundColor),
         label: Text(
           label,
           style: TextStyle(
             color: foregroundColor,
-            fontSize: 24,
+            fontSize: 12,
             fontWeight: FontWeight.w400,
           ),
         ),
         style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 15,vertical: 6),
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),

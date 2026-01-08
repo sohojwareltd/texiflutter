@@ -8,6 +8,7 @@ import 'package:taxiflutter/components/overlays/pay_Amount.dart';
 import 'package:taxiflutter/components/overlays/scan_and_Pay.dart';
 import 'package:taxiflutter/components/selection_Buttons/bluetooth.dart';
 import 'package:taxiflutter/components/selection_Buttons/pay_Amount_Tip_comp.dart';
+import 'package:taxiflutter/screens/card_Pay.dart';
 import 'package:taxiflutter/screens/for_Hire.dart';
 import 'package:taxiflutter/screens/login_screens.dart';
 import 'package:taxiflutter/screens/menu_screen.dart';
@@ -42,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: TaxiReceiptScreen()
+      home: CardPay()
     );
   }
 }
