@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:taxiflutter/components/buttons/normal_Button.dart';
 import 'package:taxiflutter/components/feedback/location_Access.dart';
 
+import '../handel_permission/handel_location.dart';
+
 class PermissionRequired extends StatelessWidget {
   const PermissionRequired({super.key});
 
@@ -61,22 +63,27 @@ class PermissionRequired extends StatelessWidget {
                 SizedBox(height: 20,),
                 Column(
                   children: [
-                    LocationAccess(
-                      title: 'LOCATION ACCESS',
-                      backgroundColor: Color(0xFF60A5FA).withOpacity(0.1),
-                      contentColor: Colors.white,
-                      subtitle: 'Select While using the app',
-                      leading: Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(999),
-                        ),
-                        child: Center(
-                          child: Text(
-                            '1',
-                            style: TextStyle(fontSize: 14, color: Colors.grey),
+                    GestureDetector(
+                      onTap: (){
+                        handlePreciseLocation();
+                      },
+                      child: LocationAccess(
+                        title: 'LOCATION ACCESS',
+                        backgroundColor: Color(0xFF60A5FA).withOpacity(0.1),
+                        contentColor: Colors.white,
+                        subtitle: 'Select While using the app',
+                        leading: Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(999),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '1',
+                              style: TextStyle(fontSize: 14, color: Colors.grey),
+                            ),
                           ),
                         ),
                       ),
@@ -102,7 +109,7 @@ class PermissionRequired extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 8,),
+                    SizedBox(height: 8),
                     LocationAccess(
                       title: 'NEARBY DEVICE',
                       backgroundColor: Color(0xFF60A5FA).withOpacity(0.1),
