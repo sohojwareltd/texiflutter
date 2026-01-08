@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:taxiflutter/color_Theme/color_theme.dart';
 import 'package:taxiflutter/components/buttons/medium_Button.dart';
 import 'package:taxiflutter/components/menu_items_Navigation/nav_Manu.dart';
+import 'package:taxiflutter/handel_permission/permission_hande.dart';
 
 class QrScanScreen extends StatefulWidget {
   const QrScanScreen({super.key});
@@ -12,6 +13,7 @@ class QrScanScreen extends StatefulWidget {
 }
 
 class _QrScanScreenState extends State<QrScanScreen> {
+  PermissionHande permissionHande = PermissionHande();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,7 +53,10 @@ class _QrScanScreenState extends State<QrScanScreen> {
                   color:Color(0XFF142541) ,
                   strokeColor:ColorTheme.confidentReliable,
                   strokeWidth:4,
-                  onPressed: (){},
+                  onPressed: () async{
+                  bool isAllow = await permissionHande.handleCameraPermission(context);
+
+                  },
                 ),
 
               ])),

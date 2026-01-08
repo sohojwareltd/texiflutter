@@ -1,12 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:taxiflutter/components/buttons/normal_Button.dart';
 import 'package:taxiflutter/components/feedback/location_Access.dart';
+import 'package:taxiflutter/screens/qr_scan_screen.dart';
 
-import '../handel_permission/handel_location.dart';
+import '../handel_permission/permission_hande.dart';
 
-class PermissionRequired extends StatelessWidget {
+class PermissionRequired extends StatefulWidget {
   const PermissionRequired({super.key});
 
+  @override
+  State<PermissionRequired> createState() => _PermissionRequiredState();
+}
+
+class _PermissionRequiredState extends State<PermissionRequired> {
+  PermissionHande permissionHande = PermissionHande();
+
+  @override
+  void initState() {
+    super.initState();
+    _checkPermissions();
+  }
+
+  void _checkPermissions() async {
+    PermissionStatus locationStatus = await Permission.location.status;
+    if (locationStatus.isGranted) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => QrScanScreen()),
+      );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +43,7 @@ class PermissionRequired extends StatelessWidget {
               right: 26,
               left: 26,
               bottom: 70,
-            ) ,
+            ),
             child: Column(
               children: [
                 Image.asset('assets/images/logo.png'),
@@ -60,35 +84,30 @@ class PermissionRequired extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: 20),
                 Column(
                   children: [
-                    GestureDetector(
-                      onTap: (){
-                        handlePreciseLocation();
-                      },
-                      child: LocationAccess(
-                        title: 'LOCATION ACCESS',
-                        backgroundColor: Color(0xFF60A5FA).withOpacity(0.1),
-                        contentColor: Colors.white,
-                        subtitle: 'Select While using the app',
-                        leading: Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(999),
-                          ),
-                          child: Center(
-                            child: Text(
-                              '1',
-                              style: TextStyle(fontSize: 14, color: Colors.grey),
-                            ),
+                    LocationAccess(
+                      title: 'LOCATION ACCESS',
+                      backgroundColor: Color(0xFF60A5FA).withOpacity(0.1),
+                      contentColor: Colors.white,
+                      subtitle: 'Select While using the app',
+                      leading: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(999),
+                        ),
+                        child: Center(
+                          child: Text(
+                            '1',
+                            style: TextStyle(fontSize: 14, color: Colors.grey),
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(height: 8,),
+                    SizedBox(height: 8),
                     LocationAccess(
                       title: 'PRECISE LOCATION',
                       backgroundColor: Color(0xFF60A5FA).withOpacity(0.1),
@@ -130,9 +149,12 @@ class PermissionRequired extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 60,),
+                    SizedBox(height: 60),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 68,vertical: 60),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 68,
+                        vertical: 60,
+                      ),
                       child: RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
@@ -142,15 +164,33 @@ class PermissionRequired extends StatelessWidget {
                             height: 1.5,
                           ),
                           children: [
-                            const TextSpan(text: 'If you select the wrong option, you will need to restart the setup'),
+                            const TextSpan(
+                              text:
+                                  'If you select the wrong option, you will need to restart the setup',
+                            ),
                           ],
                         ),
                       ),
                     ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 31),
-                    child: NormalButton(text: 'Continue', textColor: Colors.white, color: Colors.blue, strokeColor: Colors.blue, strokeWidth: 0),
-                  )
+                    Padding(
+                      padding:  EdgeInsets.symmetric(horizontal: 31),
+                      child: NormalButton(
+                        text: 'Continue',
+                        textColor: Colors.white,
+                        color: Colors.blue,
+                        strokeColor: Colors.blue,
+                        strokeWidth: 0,
+                          onPressed: () async {
+                            bool request = await permissionHande.handlePreciseLocation(context);
+                            if (request) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (_) => QrScanScreen()),
+                              );
+                            }
+                          }
+                      ),
+                    ),
                   ],
                 ),
               ],

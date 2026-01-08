@@ -7,7 +7,6 @@ class CustomSnackBar {
         IconData icon = Icons.warning_amber_rounded,
         Color iconColor = Colors.red,
       }) {
-    // This removes the current SnackBar immediately if a new one is triggered
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
 
     ScaffoldMessenger.of(context).showSnackBar(
@@ -15,7 +14,7 @@ class CustomSnackBar {
         behavior: SnackBarBehavior.floating,
         backgroundColor: const Color(0xFF081524),
         elevation: 4,
-        margin: const EdgeInsets.all(20), // Adds space around the floating bar
+        margin: const EdgeInsets.all(20),
         shape: const StadiumBorder(
           side: BorderSide(color: Colors.blue, width: 1.5),
         ),
