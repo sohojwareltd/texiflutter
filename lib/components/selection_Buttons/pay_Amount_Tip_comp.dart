@@ -30,7 +30,7 @@ class PayAmountTipComp extends StatelessWidget {
         crossAxisCount: 2, // 2 items per row
         crossAxisSpacing: 10, // Horizontal space
         mainAxisSpacing: 10, // Vertical space
-        childAspectRatio: 2.2, // Width to Height ratio (Rectangle shape)
+        childAspectRatio: 1.7, // Width to Height ratio (Rectangle shape)
       ),
       itemCount: options.length,
       itemBuilder: (context, index) {
@@ -54,7 +54,7 @@ class PayAmountTipComp extends StatelessWidget {
                 options[index],
                 style: TextStyle(
                   color: textColor,
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.w500,
                 ),
               ),
