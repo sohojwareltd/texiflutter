@@ -11,6 +11,7 @@ import 'package:taxiflutter/components/selection_Buttons/pay_Amount_Tip_comp.dar
 import 'package:taxiflutter/screens/askine_forrec.dart';
 import 'package:taxiflutter/screens/card_Pay.dart';
 import 'package:taxiflutter/screens/for_Hire.dart';
+import 'package:taxiflutter/screens/kvittering.dart';
 import 'package:taxiflutter/screens/login_screens.dart';
 import 'package:taxiflutter/screens/menu_screen.dart';
 import 'package:taxiflutter/screens/permission_required.dart';
@@ -44,7 +45,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: AskineForrec()
+      home: Kvittering()
     );
   }
 }
