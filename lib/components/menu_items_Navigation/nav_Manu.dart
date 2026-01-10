@@ -21,7 +21,6 @@ class CustomHeaderMini extends StatelessWidget implements PreferredSizeWidget {
         height: 56.0, // Standard AppBar height
         child: Stack(
           children: [
-            // Back Button
             Align(
               alignment: Alignment.centerLeft,
               child: IconButton(
