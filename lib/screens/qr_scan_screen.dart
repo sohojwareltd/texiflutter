@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taxiflutter/color_Theme/color_theme.dart';
-import 'package:taxiflutter/components/buttons/medium_Button.dart';
+import 'package:taxiflutter/components/buttons/normal_Button.dart';
 import 'package:taxiflutter/components/menu_items_Navigation/nav_Manu.dart';
 import 'package:taxiflutter/handel_permission/permission_hande.dart';
 
@@ -40,7 +40,7 @@ class _QrScanScreenState extends State<QrScanScreen> {
                 const SizedBox(height: 104),
                 Image.asset('assets/images/qrframe.png'),
                 const SizedBox(height: 78.88),
-                MediumButton(text: 'Scan with QR-code',
+                NormalButton(text: 'Scan with QR-code',
                     textColor: Color(0XFF0E192B),
                     color: ColorTheme.platinum,
                     strokeColor: ColorTheme.platinum,
@@ -48,7 +48,7 @@ class _QrScanScreenState extends State<QrScanScreen> {
                   onPressed: (){},
                 ),
                 const SizedBox(height: 21),
-                MediumButton(text: 'Scan with QR-code',
+                NormalButton(text: 'Scan with QR-code',
                   textColor: ColorTheme.platinum,
                   color:Color(0XFF142541) ,
                   strokeColor:ColorTheme.confidentReliable,

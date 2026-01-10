@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:taxiflutter/components/buttons/medium_Button.dart';
+import 'package:taxiflutter/components/buttons/normal_Button.dart';
 
 class PaymentCompleted extends StatelessWidget {
   final bool isPayment;
@@ -86,7 +86,7 @@ class PaymentCompleted extends StatelessWidget {
           const Divider(thickness: 1, color: Color(0XFF485976)),
           const SizedBox(height: 24),
 
-          MediumButton(
+          NormalButton(
             text: isPayment ? 'View Receipt' : 'Use different method',
             textColor: Colors.white,
             color: const Color(0XFF086CBF),
@@ -96,7 +96,7 @@ class PaymentCompleted extends StatelessWidget {
             },
           ),
           const SizedBox(height: 12),
-          MediumButton(
+          NormalButton(
             text: isPayment ? 'Send Receipt' : 'Try again',
             textColor: Colors.white,
             color: const Color(0xFF3C69A2).withOpacity(0.6),

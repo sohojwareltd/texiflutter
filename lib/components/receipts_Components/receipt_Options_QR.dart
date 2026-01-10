@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:taxiflutter/color_Theme/color_theme.dart';
 import 'package:taxiflutter/components/buttons/normal_Button.dart';
 
-import '../buttons/medium_Button.dart';
 
 class ReceiptOptionsQr extends StatelessWidget {
   final VoidCallback onClose;
