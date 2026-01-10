@@ -14,7 +14,7 @@ class Tags extends StatelessWidget {
     this.onTap,
     this.backgroundColor = const Color(0xFF00569E),
     this.textColor = Colors.white,
-    this.borderRadius = 8.0,
+    this.borderRadius = 10,
     this.padding = const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
   });
 
@@ -32,7 +32,7 @@ class Tags extends StatelessWidget {
           label,
           style: TextStyle(
             color: textColor,
-            fontSize: 18,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),

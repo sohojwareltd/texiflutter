@@ -23,18 +23,17 @@ class ActionRow extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal: 25.5,vertical: 17.5),
         decoration: BoxDecoration(
-          color: const Color(0xFF1A2332), // Dark navy background
+          color: Colors.transparent, // Dark navy background
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: Colors.white.withOpacity(0.1),
-            width: 1,
+            color: Colors.blue,
+            width: 0.5,
           ),
         ),
         child: Row(
           children: [
-            // Left Column: Title and Description
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,6 +66,7 @@ class ActionRow extends StatelessWidget {
               children: [
                 if (statusLabel != null)
                   Completed(label: statusLabel!),
+                SizedBox(width: 19,),
                 const Icon(
                   Icons.arrow_forward,
                   color: Colors.white,

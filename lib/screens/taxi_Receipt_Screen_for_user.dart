@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:taxiflutter/components/buttons/normal_Button.dart';
 
-void main() => runApp(const MaterialApp(home: TaxiReceiptScreen()));
+void main() => runApp(const MaterialApp(home: TaxiReceiptScreenForUser()));
 
-class TaxiReceiptScreen extends StatelessWidget {
-  const TaxiReceiptScreen({super.key});
+class TaxiReceiptScreenForUser extends StatelessWidget {
+  const TaxiReceiptScreenForUser({super.key});
 
   @override
   Widget build(BuildContext context) {

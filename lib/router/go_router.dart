@@ -8,14 +8,16 @@ import 'package:taxiflutter/screens/permission_required.dart';
 import 'package:taxiflutter/screens/profile_menu.dart';
 import 'package:taxiflutter/screens/qr_scan_screen.dart';
 import 'package:taxiflutter/screens/taxi_Meter.dart';
-import 'package:taxiflutter/screens/taxi_Receipt_Screen.dart';
+import 'package:taxiflutter/screens/taxi_Receipt_Screen_for_drivers.dart';
+import 'package:taxiflutter/screens/taxi_Receipt_Screen_for_user.dart';
+import 'package:taxiflutter/screens/trip_summary_on_going_trip.dart';
 
 class goRouter {
   static final GoRouter router = GoRouter(
       routes: [
         GoRoute(path: '/',
         builder: (context, state) {
-          return LoginScreens();
+          return TaxiReceiptScreenForDrivers(isCancelled: true,);
         }),
 
         GoRoute(path: '/home',
@@ -43,7 +45,7 @@ class goRouter {
             }),
         GoRoute(path: '/taxi_receipt',
             builder: (context, state) {
-              return TaxiReceiptScreen();
+              return TaxiReceiptScreenForUser();
             }),
         GoRoute(path: '/notice',
             builder: (context, state) {
