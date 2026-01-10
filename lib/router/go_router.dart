@@ -15,7 +15,7 @@ class goRouter {
       routes: [
         GoRoute(path: '/',
         builder: (context, state) {
-          return TaxiReceiptScreenForDrivers(isCancelled: true,);
+          return ForHire();
         }),
 
         GoRoute(path: '/home',

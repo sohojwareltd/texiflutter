@@ -8,6 +8,8 @@ import 'package:taxiflutter/components/labels/bt_Status.dart';
 import 'package:taxiflutter/components/labels/push2Pay.dart';
 import 'package:taxiflutter/components/menu_items_Navigation/appBar.dart';
 import 'package:taxiflutter/components/overlays/add_Number.dart';
+import 'package:taxiflutter/components/overlays/current_trip.dart';
+import 'package:taxiflutter/components/overlays/notice.dart';
 import 'package:taxiflutter/components/overlays/pay_Amount.dart';
 import 'package:taxiflutter/components/overlays/scan_and_Pay.dart';
 
@@ -25,7 +27,7 @@ class _ForHireState extends State<ForHire> {
   Widget build(BuildContext context) {
     bool isTripOngoing =
         double.tryParse(_currentFareAmount) != null &&
-        double.parse(_currentFareAmount) > 0;
+            double.parse(_currentFareAmount) > 0;
 
     return Scaffold(
       backgroundColor: const Color(0xFF081524),
@@ -65,7 +67,7 @@ class _ForHireState extends State<ForHire> {
                 mainText: isTripOngoing ? 'HIRE' : 'FOR HIRE',
                 subText: isTripOngoing ? 'Ongoing trip' : 'Press to start ride',
                 backgroundColor: isTripOngoing ? Colors.red : Colors.green,
-                onTap: () {
+                onTap: () async {
                   // This is where the logic happens
                   if (!isTripOngoing) {
                     // If the trip is NOT ongoing, show a message
@@ -74,6 +76,43 @@ class _ForHireState extends State<ForHire> {
                       'You have to add an amount first.',
                     );
                   } else {
+                    await showDialog(
+                      context: context,
+                      barrierColor: Colors.black.withOpacity(0.5),
+                      builder: (BuildContext dialogContext) { // Renamed to avoid confusion
+                        return CurrentTrip(
+                          title: 'Current trip',
+                          startedTitle: 'Started',
+                          startedAmount: '18.21',
+                          currentFareTitle: 'CurrentFare Title',
+                          currentAmount: _currentFareAmount,
+                          buttonText: 'other payment',
+                          informationText: 'informationText',
+                          controller: TextEditingController(),
+                          showCloseButton: isTripOngoing,
+                          otherPaymentButtonPressed: () {
+                            // Handle logic
+                          },
+                          cancelButtonPressed: () async {
+                            Navigator.pop(dialogContext);
+                            await showDialog(
+                              context: dialogContext,
+                              builder: (BuildContext noticeContext) {
+                                return Notice(
+                                  title0: 'title0',
+                                  description: 'description',
+                                  buttonText1: 'buttonText1',
+                                  buttonText2: 'button text',
+                                  title: 'title',
+                                  icon: Icons.front_hand_outlined,
+                                  isNotice: false,
+                                );
+                              },
+                            );
+                          },
+                        );
+                      },
+                    );
                     // Handle logic for an ongoing trip (e.g., end trip)
                     print("Trip is ongoing. Handle action...");
                   }
@@ -156,11 +195,11 @@ class _ForHireState extends State<ForHire> {
                         return;
                       }
                       await showDialog(
-                      context: context,
-                      barrierColor: Colors.black.withOpacity(0.5),
-                      builder: (BuildContext context) {
-                        return  AddNumber(controller: TextEditingController());
-                      },
+                        context: context,
+                        barrierColor: Colors.black.withOpacity(0.5),
+                        builder: (BuildContext context) {
+                          return AddNumber(controller: TextEditingController());
+                        },
                       );
                       // Add Push2Pay logic here
                       print("Push2Pay payment selected.");

@@ -30,7 +30,12 @@ class Sms extends StatelessWidget {
               ),
 
               SizedBox(height: 64),
-              ReceiptOptionsSmsEpost(controller: TextEditingController(),initialCountryCode: '+47',onClose: () {},onSendRequest: (countryCode, phoneNumber,email) {},)
+              ReceiptOptionsSmsEpost(
+                controller: TextEditingController(),
+                initialCountryCode: '+47',
+                onClose: () {},
+                onSendRequest: (countryCode, phoneNumber, email) {},
+              ),
             ],
           ),
         ),
