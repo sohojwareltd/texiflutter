@@ -18,7 +18,6 @@ import 'package:taxiflutter/screens/permission_required.dart';
 import 'package:taxiflutter/screens/taxi_Meter.dart';
 import 'package:taxiflutter/screens/taxi_Receipt_Screen.dart';
 import 'components/Payment_Components/current_Fare.dart';
-import 'components/buttons/medium_Button.dart';
 import 'components/feedback/location_Access.dart';
 import 'components/feedback/total_Fare.dart';
 import 'components/labels/bt_Status.dart';

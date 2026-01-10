@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:taxiflutter/color_Theme/color_theme.dart';
-import 'package:taxiflutter/components/buttons/medium_Button.dart';
+import 'package:taxiflutter/components/buttons/normal_Button.dart';
 import 'package:taxiflutter/components/text_fields/input_Text_field.dart';
 
 class LoginScreens extends StatefulWidget {
@@ -152,7 +152,7 @@ class _LoginScreensState extends State<LoginScreens> {
                 focusedBorderColor: ColorTheme.platinum,
               ),
               const SizedBox(height: 20),
-              MediumButton(text: 'Login',
+              NormalButton(text: 'Login',
                   textColor: ColorTheme.platinum,
                   color: ColorTheme.coreBlue,
                   strokeColor: ColorTheme.coreBlue,

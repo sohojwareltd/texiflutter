@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
       ),
       body: PaymentCompleted(
-        amount: 200,
+        amount: "200",
         isPayment: true,
         tripId: '122',
       ),
