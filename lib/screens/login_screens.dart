@@ -157,10 +157,9 @@ class _LoginScreensState extends State<LoginScreens> {
                   color: ColorTheme.coreBlue,
                   strokeColor: ColorTheme.coreBlue,
                   onPressed: (){
-                context.go('/home');
+                context.push('/profile_menu');
                   },
                   strokeWidth: 0.0),
-
 
               const SizedBox(height: 20),
               Center(

@@ -1,9 +1,11 @@
 import 'package:go_router/go_router.dart';
+import 'package:taxiflutter/components/overlays/notice.dart';
 import 'package:taxiflutter/screens/for_Hire.dart';
 import 'package:taxiflutter/screens/home_screen.dart';
 import 'package:taxiflutter/screens/login_screens.dart';
 import 'package:taxiflutter/screens/menu_screen.dart';
 import 'package:taxiflutter/screens/permission_required.dart';
+import 'package:taxiflutter/screens/profile_menu.dart';
 import 'package:taxiflutter/screens/qr_scan_screen.dart';
 import 'package:taxiflutter/screens/taxi_Meter.dart';
 import 'package:taxiflutter/screens/taxi_Receipt_Screen.dart';
@@ -42,6 +44,14 @@ class goRouter {
         GoRoute(path: '/taxi_receipt',
             builder: (context, state) {
               return TaxiReceiptScreen();
+            }),
+        GoRoute(path: '/notice',
+            builder: (context, state) {
+              return Notice(title0: 'Title', description: 'Description', buttonText1: 'Notice');
+            }),
+        GoRoute(path: '/profile_menu',
+            builder: (context, state) {
+              return ProfileMenu();
             }),
 
 
