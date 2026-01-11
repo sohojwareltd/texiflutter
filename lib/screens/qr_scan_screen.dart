@@ -56,6 +56,7 @@ class _QrScanScreenState extends State<QrScanScreen> {
                           barrierDismissible: true,
                           builder: (_) => const QrScannerDialog(),
                         );
+
                         if (result != null) {
                           print("QR RESULT: $result");
                         }
