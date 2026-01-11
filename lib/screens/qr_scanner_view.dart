@@ -111,8 +111,8 @@ class _QrScannerDialogState extends State<QrScannerDialog> {
                     ),
                     child: Icon(
                       isFlashOn
-                          ? Icons.flashlight_on
-                          : Icons.flashlight_off_rounded,
+                          ? Icons.flashlight_on_outlined
+                          : Icons.flashlight_off_outlined,
                       color: Colors.blueAccent,
                       size: 28,
                     ),
