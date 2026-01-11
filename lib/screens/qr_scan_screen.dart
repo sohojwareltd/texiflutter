@@ -17,24 +17,15 @@ class _QrScanScreenState extends State<QrScanScreen> {
   PermissionHande permissionHande = PermissionHande();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        color: ColorTheme.calmProfessional
-      ),
-      child: Container(
+    return Scaffold(
+        backgroundColor: const Color(0xFF081524),
+      body: Container(
         decoration: BoxDecoration(
           color: Color(0XFF142541),
           borderRadius: BorderRadius.circular(10)
         ),
-        margin: const EdgeInsets.only(
-          top: 66,
-          left: 24,
-          right: 24,
-          bottom: 26
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 20),
+        margin: const EdgeInsets.symmetric(horizontal: 24,vertical: 28),
+        padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 5),
           child: Column(
               children: [
                 CustomHeaderMini(title: 'Connect to vehicle'),
