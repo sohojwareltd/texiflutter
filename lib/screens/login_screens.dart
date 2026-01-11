@@ -157,7 +157,7 @@ class _LoginScreensState extends State<LoginScreens> {
                   color: ColorTheme.coreBlue,
                   strokeColor: ColorTheme.coreBlue,
                   onPressed: (){
-                context.push('/profile_menu');
+                context.push('/qr_scan');
                   },
                   strokeWidth: 0.0),
 

@@ -4,6 +4,7 @@ import 'package:taxiflutter/color_Theme/color_theme.dart';
 import 'package:taxiflutter/components/buttons/normal_Button.dart';
 import 'package:taxiflutter/components/menu_items_Navigation/nav_Manu.dart';
 import 'package:taxiflutter/handel_permission/permission_hande.dart';
+import 'package:taxiflutter/screens/qr_scanner_view.dart';
 
 class QrScanScreen extends StatefulWidget {
   const QrScanScreen({super.key});
@@ -45,7 +46,23 @@ class _QrScanScreenState extends State<QrScanScreen> {
                     color: ColorTheme.platinum,
                     strokeColor: ColorTheme.platinum,
                     strokeWidth:0.0,
-                  onPressed: (){},
+                    onPressed: () async {
+                      bool isAllow =
+                      await permissionHande.handleCameraPermission(context);
+
+                      if (isAllow) {
+                        final result = await showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (_) => const QrScannerDialog(),
+                        );
+                        if (result != null) {
+                          print("QR RESULT: $result");
+                        }
+                      }
+                    }
+
+
                 ),
                 const SizedBox(height: 21),
                 NormalButton(text: 'Scan with QR-code',
@@ -53,9 +70,7 @@ class _QrScanScreenState extends State<QrScanScreen> {
                   color:Color(0XFF142541) ,
                   strokeColor:ColorTheme.confidentReliable,
                   strokeWidth:4,
-                  onPressed: () async{
-                  bool isAllow = await permissionHande.handleCameraPermission(context);
-
+                  onPressed: (){
                   },
                 ),
 
