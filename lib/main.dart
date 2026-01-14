@@ -11,6 +11,7 @@ import 'package:taxiflutter/components/selection_Buttons/pay_Amount_Tip_comp.dar
 import 'package:taxiflutter/router/go_router.dart';
 import 'package:taxiflutter/screens/askine_forrec.dart';
 import 'package:taxiflutter/screens/card_Pay.dart';
+import 'package:taxiflutter/screens/edit_fare_and_add_fee.dart';
 import 'package:taxiflutter/screens/for_Hire.dart';
 import 'package:taxiflutter/screens/home_screen.dart';
 import 'package:taxiflutter/screens/login_screens.dart';
@@ -43,7 +44,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      home: AskineForrec()
+      home: EditFareAndAddFee()
     );
     // return MaterialApp.router(
     //   debugShowCheckedModeBanner: false,
